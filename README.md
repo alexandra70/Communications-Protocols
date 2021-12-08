@@ -1,7 +1,7 @@
-# Pcom-labs - laburi protocoale de comunicatii
+# Pcom - protocoale de comunicatii
 
 
-***Laboratorul 01 - Notiuni pregatitoare pentru laboratorul de PC
+***Notiuni pregatitoare protocoale de comunicatii
 Fisiere - ex: sockets - folositi in comunicatia dintre procese pe retea; pot fi utilizati si pentru a comunica intre procesele de pe acelasi calculator gazda;
 Pentru a putea actiona asupra unui fisier, este nevoie inainte de toate de o metoda de a identifica in mod unic fisierul. In cazul functiilor discutate, identificarea fisierului se face printr-un asa-numit descriptor de fisier (file descriptor). Acesta este un numar intreg care este asociat fisierului in momentul deschiderii acestuia.
 Ce trebuie sa invat sa folosesc:***
@@ -17,4 +17,4 @@ POS == SEEK_SET, ATUNCI POZ SE FACE RELATIV LA INCEPUTUL FISIERULUI;
 POS == SEEK_CUR, ATUNCI POZ SE FACE RELATIV LA POZ ACTUALA;
 POS == SEEK_END, ATUNCI POZ SE FACE RELATIV LA SF FILE.*****
 
-Laboratorul 06 - Socketi UDP
+Socketi UDP
