@@ -1,0 +1,9 @@
+Procesul complet de forwarding este urmatorul:
+
+Routerul primeste un pachet apeland functia get_packet.
+Routerul face LPM pentru a gasi urmatorul hop.
+In cazul in care nici o intrare din tabela nu face match, ruterul arunca datagrama.
+Pentru IPv4, este verificat checksum-ul. Daca acesta este incorect, pachetul este aruncat.
+Routerul decrementeaza campul TTL din header-ul IPv4 sau Hop Limit pentru IPv6. In cazul in care TTL sau Hop Limit sunt 0 sau mai mici, pachetul este aruncat. Se recalculeaza checksum-ul la acest pas, doar pentru IPv4
+Routerul face update la adresa MAC sursa a pachetului in adresa proprie inainte de a il trimite la urmatorul HOP si adresa MAC destinatie a urmatorului HOP.
+Routerul foloseste functia send_packet pentru a trimite pachetul la next hop.
