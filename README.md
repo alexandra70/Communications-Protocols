@@ -8,6 +8,27 @@ POS == SEEK_SET, ATUNCI POZ SE FACE RELATIV LA INCEPUTUL FISIERULUI;
 POS == SEEK_CUR, ATUNCI POZ SE FACE RELATIV LA POZ ACTUALA;
 POS == SEEK_END, ATUNCI POZ SE FACE RELATIV LA SF FILE.
 
+>Forwarding : 
+>Data plane - se refera la procesarea pachetelor ajunse la router. 
+>Control plane se refera la popularea tabelelor de routare.
+>O tabela de routare contine info precum: interfata pe care trebuie sa trimit pachetul si adresa ip(4/6) a urmtorului hop.
+>Proces de routare: Primesc un pachet, extrag din el adresa Ip-dest(unde trebuie sa ajunga pachetul) si mai apoi verific tabela de routare sa vad dc am o adresa mac care corespunde adresei Ip-dest. Din acest punct dirijez pachetul spre next hop. Procesul se va repeta pana se ajunge la destinatie. 
+
+>
+>Header Ethernet
+>
+>+-----------------+------------+-------------+
+>
+>|     Bytes 0-5   | Bytes 6-11 | Bytes 12-13 |
+>
+>+------------------------------+-------------+
+>
+>| Destination MAC | Source MAC |  EtherType  |
+>
+>+-----------------+------------+-------------+
+
+
+
 >Socketi UDP
 Comunicare client-server UNIX::
 Pasi urmati pentru a schimba mesaje folosind UDP la nivelul Transport sunt urmatorii:
