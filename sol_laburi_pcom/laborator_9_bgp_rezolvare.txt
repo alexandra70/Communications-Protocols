@@ -1,0 +1,66 @@
+! general configuration LOND
+interface ixp_21
+ ip address 180.21.0.19/24
+exit
+
+router ospf
+  network 180.21.0.0/24 area 0
+exit
+
+router bgp 19
+ bgp router-id 180.21.0.19
+ no bgp ebgp-requires-policy
+ no bgp network import-check
+
+ neighbor 180.21.0.21 remote-as 21
+
+ address-family ipv4 unicast
+  neighbor 180.21.0.21 activate
+  neighbor 180.21.0.21 soft-reconfiguration inbound
+
+  network 19.0.1.0/24
+  network 19.0.2.0/24
+  network 19.0.3.0/24
+  network 19.0.4.0/24
+ exit-address-family
+exit
+
+access-list ixp permit any 
+
+route-map IXP_EXPORT permit 10
+  set community 21:1
+exit
+
+route-map IXP_IMPORT permit 10
+  match ip address any
+exit
+
+
+
+
+! general config ALL
+router bgp 19
+ no bgp ebgp-requires-policy
+ no bgp network import-check
+
+ neighbor LOND peer-group
+ neighbor 19.0.1.1 peer-group LOND
+ neighbor 19.0.2.2 peer-group LOND
+
+ neighbor BUCH peer-group
+ neighbor 19.0.3.2 peer-group BUCH
+ neighbor 19.0.4.1 peer-group BUCH
+
+ neighbor BERL peer-group
+ neighbor 19.0.4.2 peer-group BERL
+ neighbor 19.0.2.1 peer-group BERL
+
+ neighbor PARI peer-group
+ neighbor 19.0.3.1 peer-group PARI
+ neighbor 19.0.1.2 peer-group PARI
+
+ neighbor LOND remote-as 19
+ neighbor BUCH remote-as 19
+ neighbor BERL remote-as 19
+ neighbor PARI remote-as 19
+exit
