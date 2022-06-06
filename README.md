@@ -1,6 +1,8 @@
 # Pcom - protocoale de comunicatii
 
+>https://www.youtube.com/watch?v=IgLjbJNTIlQ&list=PLFCsj_8y4Y78MatrjtMWpTv4v48RXik35&index=17&ab_channel=AlexandraIspas
 
+>Random
 >off_t lseek(int fd, off_t offset, int pos) = Lseek (indicatorul poz curente se poate seta
 si in cadurl lui leesek, fara sa citesc pana la aceea pos de ex); DECI FUNCTIA LSEEK
 POZITIONEAZA INDICATORUL LA DEPLASAMENTUL OFFSET IN FISIER DUPA CUM URMEAZA :: 
